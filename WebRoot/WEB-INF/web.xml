@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>XgxxServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.XgxxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XgxxServlet</servlet-name>
+    <url-pattern>/xgxx</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>XgmmServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.XgmmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XgmmServlet</servlet-name>
+    <url-pattern>/xgmm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>GetSessionServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.GetSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSessionServlet</servlet-name>
+    <url-pattern>/getsession</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>addUserServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addUserServlet</servlet-name>
+    <url-pattern>/tjyh</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>checkUserServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.CheckUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkUserServlet</servlet-name>
+    <url-pattern>/checkUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>zhglckxxServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.CkxxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zhglckxxServlet</servlet-name>
+    <url-pattern>/zhglckxx</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>zhglxgyhxxServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.XgyhxxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zhglxgyhxxServlet</servlet-name>
+    <url-pattern>/zhglxgyhxx</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>zhglDeleteUserServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zhglDeleteUserServlet</servlet-name>
+    <url-pattern>/zhgldeleteUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>zhglxgyhmmServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.XgyhmmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zhglxgyhmmServlet</servlet-name>
+    <url-pattern>/zhglxgyhmm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CgxdlbServlet</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.CgxdlbServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CgxdlbServlet</servlet-name>
+    <url-pattern>/cgxdlb</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SelectCgxdlbPages</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.SelectCgxdlbPages</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectCgxdlbPages</servlet-name>
+    <url-pattern>/cgxdlbGetPage</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>Sscgxdlb</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.SscgxdlbServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Sscgxdlb</servlet-name>
+    <url-pattern>/sscgxdlb</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SscgxdlbPages</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.SscgxdlbPagesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SscgxdlbPages</servlet-name>
+    <url-pattern>/sscgxdlbPages</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Cgzxglzbshlb</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.Cgzxglzbshlb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cgzxglzbshlb</servlet-name>
+    <url-pattern>/zbshlb</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.fengwuj.Servlet.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+</web-app>

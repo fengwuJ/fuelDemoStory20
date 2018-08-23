@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/myIndex.css">
+<script type="text/javascript" src="../frame/jquery.min.js"></script>
+<script type="text/javascript">
+
+	//登录事件
+	$(function(){
+		$("#login").click(function(){
+			//检验用户的信息输入
+			var isOK = true;
+			var username = $("#username").val();
+			var password = $("#password").val();
+			if(username.length == 0){
+				isOK = false;
+				alert("密码不能为空，请重新输入！");
+				$("#username").val("");
+			}
+			if(password.length == 0){
+				isOK = false;
+				alert("密码不能为空，请重新输入！");
+				$("#password").val("");
+			}
+			if(username.indexOf("\"") >= 0 || username.indexOf("\''") >= 0){
+				isOK = false;
+				alert("用户名包含非法字符，请重新输入！");
+				$("#username").val("");
+			}
+				
+			for(i = 0; i < username.length; i++) {
+				if(username.charCodeAt(i) > 128){
+					isOK = false;
+					alert("不支持中文用户名");
+					$("#username").val("");
+					break;
+				}
+			}
+				
+			for(i = 0; i < password.length; i++) {
+				if(password.charCodeAt(i) > 128){
+					isOK = false;
+					alert("不支持中文密码");
+					$("#password").val("");
+					break;
+				}
+			}	
+			
+			if(isOK == true){
+				$("#login").text("正在登录...");			//更改登录按钮的值
+				$("#login").attr("disabled",true);		//登录按钮不可用
+				var data = $("form").serialize();		
+				$.ajax({
+					dataType:'text',
+					type:'post',
+	           	 	url: "../login",
+	            	data:data,
+	            	success: function(result){
+	              		if(result == "success"){
+	              			//alert("登录成功");
+	              			$(window).attr('location','main.jsp');
+	              			//window.location.href("http://localhost:8080/fuelDemo/html/main.jsp");
+	              		}else{
+	              			$("#login").text("立即登录");			//更改登录按钮的值
+							$("#login").attr("disabled",false);		//登录按钮可用
+	              			alert("账户名或密码错误");
+	              		}
+	           	 	},
+	            	error:function(){ 
+	            		$("#login").attr("disabled",false);		//恢复登录按钮状态
+	     				alert("数据请求失败");
+	    			}
+	    		});
+			}
+		});
+	});
+			
+			/*var username = $("#username").val();
+			var password = $("#password").val();
+			if(username.length == 0 || password.length == 0){
+				alert("用户名和密码不能为空，请重新输入！");
+				return false;
+			}
+			for(i = 0; i < username.length; i++) {
+				if(username.charCodeAt(i) > 128){
+					alert("不支持中文用户名");
+					return false;
+				}
+			}
+			for(i = 0; i < password.length; i++) {
+				if(password.charCodeAt(i) > 128){
+					alert("不支持中文密码");
+					return false;
+				}
+			}*/	
+			/*var username = $("#username").val();
+			var password = $("#password").val();
+			var flag = true;
+			if(username.length == 0 || password.length == 0){
+				flag = false;
+				alert("用户名和密码不能为空，请重新输入！");
+				return flag;
+			}
+			
+			if(username.indexOf("\"") >= 0 || password.indexOf("\'") >= 0){
+				flag = false;
+				alert("您的输入包含非法字符，请重新输入！");
+				return flag;
+			}
+			
+			for(i = 0; i < username.length; i++) {
+				if(username.charCodeAt(i) > 128){
+					flag = false;
+					alert("不支持中文用户名");
+					break;
+				}
+			}
+			for(i = 0; i < password.length; i++) {
+				if(password.charCodeAt(i) > 128){
+					flag = false;
+					alert("不支持中文密码");
+					break;
+				}
+			}		
+			return flag;*/
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="ygzq.html">阳光专区v2.1</a></li>
+				<li><a href="jyzx.html">交易中心</a></li>
+				<li><a href="zxzx.html">咨询中心</a></li>
+				<li><a href="wlzx.html">物流中心</a></li>
+				<li><a href="hyzx.html">会员中心</a></li>
+				<li><a href="gylgl.html">供应链管理</a></li>
+			</ul>
+		</div>
+		<div id="body">
+			<div id="left">
+				<p>统一平台，集中管控<br><br><br>阳光采购，竞价交易<br><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;智能管理，公正验收<br><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集成信息，实时监督</p>
+			</div>
+			<div id="right">
+				<p>会员管理</p>
+				<form action="" id="form">
+					<img src="../images/headpic.png"/><input style="border-radius: 10px; margin-left: 10px;" autofocus="autofocus" placeholder="请输入用户名" name="username" id="username"/>
+					<br><br>
+					<img src="../images/passwdpic.png"/><input style="border-radius: 10px;margin-left: 10px;" placeholder="请输入密码" name="password" id="password" type="password"/>
+					<br><br>
+					<button style="width:100px; border: 1px solid #000;border-radius: 12px;background: #0080ff;" name="login" id="login">立即登录</button><br><br>
+					<a class="astyle">忘记密码?</a><a style="margin-left: 35px;" class="astyle">会员注册</a>
+				</form>
+			</div>
+		</div>
+		
+		<div id="bottom">
+			<article class="article">我挥舞着键盘和本子，发誓要把世界写个明明白白！！！</article>
+		</div>
+		
+	</div>
+</body>
+</html>

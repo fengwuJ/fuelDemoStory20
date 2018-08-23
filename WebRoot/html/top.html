@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+/* 设置上层布局 */
+div#top {
+	background-color: #2E8B57;
+	width: 1200px;
+	height: 200px;
+}
+/* 设置图片布局 */
+div#img {
+	overflow: hidden;
+	float: left;
+	width: 300px;
+	height: 100px;;
+}
+
+/* 设置图片大小 */
+img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 设置标题样式 */
+div#title {
+	text-align: center;
+	float: left;
+	width: 900px;
+}
+
+/* 设置上导航栏布局 */
+div#navigation {
+	float: left;
+	background-color: #2E8B57;
+	width: 1200px;
+	height: 100px;
+}
+
+/* 设置上导航栏 */
+div#navigation1 {
+	padding-top: 15px;
+	padding-left: 300px;
+}
+/* 设置按钮特效 */
+.button {
+	padding: 20px;
+	text-align: center;
+	float: left;
+	width: 150px;
+	background-image: linear-gradient(#00868B, #00BFFF);
+	border: 2px solid rgba(0, 0, 0, .2);
+	border-radius: 20px;
+	box-shadow: 0 1px white inset;
+	text-shadow: 0 1px 1px black;
+	color: white;
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+/* 设置按钮响应特效 */
+button:active {
+	box-shadow: .05em .1em .2em rgba(0, 0, 0, .6) inset;
+	border-color: rgba(0, 0, 0, .3);
+	background: #bbb;
+}
+
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var xmlHttpRequest = new XMLHttpRequest();
+	function logout(){
+		xmlHttpRequest.onreadystatechange = checkResult;
+		xmlHttpRequest.open("get", "../logout", true);
+		xmlHttpRequest.send(null);
+	}
+	
+	function checkResult(){
+		if (xmlHttpRequest.readyState==4 && xmlHttpRequest.status==200){
+			if(xmlHttpRequest.responseText == "ok"){
+				window.location.href="index.html";
+			}
+		}  
+     
+	}
+</script>
+
+</head>
+<body>
+		<div id="top">
+
+			<div id="img">
+				<img src="../images/icon.png" />
+			</div>
+
+			<div id="title">
+				<h1>分 公 司 业 务 管 理 中 心</h1>
+			</div>
+			
+			<div style="float: left;margin-top: -50px;margin-left: 800px;"><a style="color: #8B0000;" href="javascript:void(0)" id="logout" onclick="logout();">退出登录</a></div>
+			
+			<div id="navigation">
+				<div id="navigation1">
+					<button class="button">首页中心</button>
+					<button class="button">交易中心</button>
+					<button class="button">咨询中心</button>
+					<button class="button">服务中心</button>
+				</div>
+			</div>
+</body>
+</html>

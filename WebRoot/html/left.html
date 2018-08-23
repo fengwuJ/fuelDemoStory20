@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>left.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+	<style>	
+			/* 设置下层左侧布局 */
+			div#left {
+				margin-top:20px;
+				float:left;
+				background-color:#2E8B57;
+				width:240px;
+				height:900px;
+			}
+			
+			/* 设置左导航栏 */
+			div#navigation2 {
+				padding-left:5px;
+				margin-top:20px;
+				margin:0 auto;
+			}
+			
+			
+			    /* 设置ul和li的样式 */
+			.menuDiv ul , .menuDiv li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				float: left;
+			} 
+			
+			/* 设置二级菜单绝对定位，并隐藏 */
+			.menuDiv > ul > li > ul {
+				display: none;
+				
+			}
+
+			/* 设置二级菜单的li的样式 */
+			.menuDiv > ul > li > ul > li {
+				float: none;
+			}
+		  
+			/* 鼠标放在一级菜单上，显示二级菜单 */
+			.menuDiv > ul > li:hover ul{
+				display: block;
+			}
+
+			/* 一级菜单 */
+			.menuDiv > ul > li > a {
+				line-height: 25px;
+				text-align: center;
+				display: block;
+				padding:15px;
+				text-align:center;
+				width:120px;
+				margin-top:20px;
+				margin-left:40px;
+				
+				background-image: linear-gradient(#00868B, #00BFFF);
+				border: 2px solid rgba(0,0,0,.2);
+				border-radius: 20px;
+				box-shadow: 0 1px white inset;
+				text-shadow: 0 1px 1px black;
+				color:white;
+				font-weight: bold;	
+			}
+
+
+			/* 二级菜单 */
+			.menuDiv > ul > li > ul > li > a {
+				display: block;
+				
+				line-height: 10px;
+				text-align: center;
+				display: block;
+				padding:10px;
+				text-align:center;
+				margin-left:40px;
+				width:130px;
+				margin-top:10px;
+				background-image: linear-gradient(#BBFFFF, #00BFFF);
+				border: 2px solid rgba(0,0,0,.2);
+				border-radius: 20px;
+				box-shadow: 0 1px white inset;
+				text-shadow: 0 1px 1px black;
+				color:white;
+				font-weight: bold;
+				top:-40px;
+				left:150px;
+				
+			}
+			.a {
+				text-decoration: none;
+			}
+			
+	</style>
+  </head>
+  
+  <body>
+   		<div id = "left">
+					<div id = "navigation2">
+						<div class = "menuDiv">
+						 <ul class = "ul">
+					    	
+							<li class = "ul li">
+								<a  class = "a" href="main.jsp">事务中心</a>
+									<ul class = "ul li ul">
+										<li class = ""><a class = "a" href="main.jsp">待办事项</a></li>
+									</ul>
+							</li>
+	
+							<li class = "">
+								<a class = "a" href="">采购申请管理</a>
+									<ul class = "ul li ul">
+										<li class = ""><a class = "a" href="cgsqcgxqlb.jsp">采购需求列表</a></li>
+									</ul>
+							</li>	
+							
+							<li class = "li">
+								<a  class = "a" href="">采购执行管理</a>
+									<ul class = "ul li ul">
+										<li class = ""><a class = "a" href="cgzxglcgxdlb.jsp">采购下达列表</a></li>
+										<li class = "li1"><a class = "a" href="cgzxglzbshlb.jsp">中标审核</a></li>
+									</ul>
+							</li>
+							
+							<li class = "li">
+								<a  class = "a" href="">供应商管理</a>	
+									<ul class = "ul li ul">
+										<li class = ""><a class = "a" href="">查看合作供应商</a></li>
+										<li class = "li1"><a class = "a" href="">供应商申请审核</a></li>
+										<li class = ""><a class = "a" href="">电厂申请审核</a></li>
+										<li class = "li1"><a class = "a" href="">年度评价</a></li>
+									</ul>
+							</li>
+							
+							<li class = "li">
+								<a class = "a" href="">账号管理</a>
+									<ul class = "ul li ul">
+										<li class = ""><a class = "a" href="zhglxgxx.jsp">修改个人信息</a></li>
+										<li class = ""><a class = "a" href="zhglxgmm.jsp">修改个人密码</a></li>
+										<li class = ""><a class = "a" href="zhglyhgl.jsp">用户管理</a></li>
+										<li class = "li1"><a class = "a" href="">CA管理</a></li>
+									</ul>
+							</li>														
+					    </ul>
+						</div>
+					</div>
+				</div>
+  </body>
+</html>
